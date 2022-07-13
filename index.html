@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            padding: 10px;
+           
+
+            
+
+            width: 450px;
+            height: 250px;
+            border: 10px double black;
+            background-color: antiquewhite;
+            color: black;
+        }
+        #botao{
+            margin-left: 50px;
+            border: solid 2px;
+            margin-top: 15px;
+            width: 350px;
+        }
+        #botao:hover{
+            color: red;
+            transform: scale(1.07);
+        }
+        .caixatexto{
+            width: 140px;
+            
+        }
+        #valor{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        #resultado{
+            width: 397px;
+            display: flex;
+            flex-direction: row;
+        }
+        .op{
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        #largura{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form class="container">
+        <div id="valor">
+
+            <input type="text" id="altura" placeholder="ALTURA" class="caixatexto">
+            
+            <input type="text" id="largura" placeholder="LARGURA" class="caixatexto">
+
+            <input type="text" id="metro" placeholder="METRO QUADRADO" class="caixatexto">
+        
+        </div>
+
+
+        <strong class="op">MATERIAL</strong><hr>
+
+        <input type="radio" id="mtg" >Metalon galvanizado</input>
+        <input type="radio" id="mtp">Metalon Preto</input>
+        <input type="radio" id="fm">Ferro de Meia</input>
+        <input type="radio" id="f3/8">Ferro de 3/8</input><hr><br>
+
+        <div id="resultado">
+
+            <strong>Valor:</strong>
+            <button type="text" id="resultado">
+            <span id="resultado1"></span>
+            
+
+        </div>
+
+        <input type="button" value="Calcular" id="botao" onclick="calcular()">
+
+    </form>
+    <script>
+
+        function calcular() {
+        var input = document.getElementById('altura');
+        var altura = input.value;
+
+        var input = document.getElementById('largura');
+        var largura = input.value;
+
+        var input = document.getElementById('metro');
+        var metro = input.value;
+
+        var input = document.getElementById('resultado1');
+        var res = altura * largura * metro;
+        
+        document.getElementById("resultado1").innerHTML = res;
+        
+
+        
+        
+
+        
+       
+        
+    }
+    </script>
+</body>
+</html>
