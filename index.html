@@ -23,7 +23,7 @@
 
             
 
-            width: 450px;
+            width: 300px;
             height: 250px;
             border: 10px double black;
             background-color: antiquewhite;
@@ -33,7 +33,7 @@
             margin-left: 50px;
             border: solid 2px;
             margin-top: 15px;
-            width: 350px;
+            width: 200px;
         }
         #botao:hover{
             color: red;
@@ -50,7 +50,7 @@
             align-items: flex-start;
         }
         #resultado{
-            width: 397px;
+            width: 297px;
             display: flex;
             flex-direction: row;
         }
@@ -72,18 +72,16 @@
             <input type="text" id="altura" placeholder="ALTURA" class="caixatexto">
             
             <input type="text" id="largura" placeholder="LARGURA" class="caixatexto">
-
-            <input type="text" id="metro" placeholder="METRO QUADRADO" class="caixatexto">
         
         </div>
 
 
-        <strong class="op">MATERIAL</strong><hr>
+        <strong class="op">SELECIONE O MATERIAL</strong><hr>
 
-        <input type="radio" id="mtg" >Metalon galvanizado</input>
-        <input type="radio" id="mtp">Metalon Preto</input>
-        <input type="radio" id="fm">Ferro de Meia</input>
-        <input type="radio" id="f3/8">Ferro de 3/8</input><hr><br>
+        <input type="button" id="mtg" onclick="MG()" value="Metalon galvanizado"></input>
+        <input type="button" id="mtp" onclick="MP()" value="Metalon Preto"></input>
+        <input type="button" id="fm" onclick="FM()" value="Ferro de Meia"></input>
+        <input type="button" id="f3/8" onclick="FERRO()" value="Ferro de 3/8"></input><hr><br>
 
         <div id="resultado">
 
@@ -94,26 +92,66 @@
 
         </div>
 
-        <input type="button" value="Calcular" id="botao" onclick="calcular()">
-
     </form>
-    <script>
+    <script> 
 
-        function calcular() {
+    function MG(){
         var input = document.getElementById('altura');
         var altura = input.value;
 
         var input = document.getElementById('largura');
         var largura = input.value;
 
-        var input = document.getElementById('metro');
-        var metro = input.value;
+        var input = document.getElementById('resultado1');
+        var res = altura * largura * 400;
+
+        document.getElementById("resultado1").innerHTML = res;
+
+    }
+    function MP(){
+        var input = document.getElementById('altura');
+        var altura = input.value;
+
+        var input = document.getElementById('largura');
+        var largura = input.value;
 
         var input = document.getElementById('resultado1');
-        var res = altura * largura * metro;
+        var res = altura * largura * 350;
         
         document.getElementById("resultado1").innerHTML = res;
+
+    }
+    function FM(){
+        var input = document.getElementById('altura');
+        var altura = input.value;
+
+        var input = document.getElementById('largura');
+        var largura = input.value;
+
+        var input = document.getElementById('resultado1');
+        var res = altura * largura * 300;
         
+        document.getElementById("resultado1").innerHTML = res;
+
+    }
+    function FERRO(){
+        var input = document.getElementById('altura');
+        var altura = input.value;
+
+        var input = document.getElementById('largura');
+        var largura = input.value;
+
+        var input = document.getElementById('resultado1');
+        var res = altura * largura * 250;
+        
+        document.getElementById("resultado1").innerHTML = res;
+
+    }
+
+
+    </script>
+</body>
+</html>
 
         
         
